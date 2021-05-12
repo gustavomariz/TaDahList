@@ -9,15 +9,11 @@ body{
     font-family: 'Crimson Text', serif;
 }
 
-.page-wrap {
-    width: 960px;
-    margin: 0 auto;
-    position:relative;
-    }
 
 .textcontainer{
     font-size:30px;
-    margin-top: 18vw;
+    margin-left:20%;
+    margin-top: 20%;
     float:left;
 }
 
