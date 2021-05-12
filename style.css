@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    background-color:rgb(0, 153, 255);
+    font-family: 'Crimson Text', serif;
+}
+
+h1{
+    font-size: 80px;
+    margin-left: 15%;
+    margin-top: 250px;
+    float:left;
+}
+
+.container{
+    float:right;
+    background-color: white;
+    text-align:center;
+    width:550px; 
+    height: 655px;
+    }
+
+.form-box{
+    width:50%;
+    margin:auto;
+    margin-top:150px;
+    font-family: 'Mulish', sans-serif;
+    
+}
+
+h2{ 
+    color: rgb(0, 153, 255);
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+input {
+    display: inline-block;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color:rgb(194, 194, 194);
+    border-radius: 0;
+    width: 75%;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.addbutton{
+    background-color:rgb(0, 153, 255);
+    border-style: solid;
+    border-radius: 5px;
+    padding: 7px 10px 7px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+    display: inline-block;
+    height:100%;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.addbutton:hover {
+    background-color: rgb(3, 122, 202);
+}
+
+ul li {
+    margin-bottom:10px;
+    padding: 5px 2px 5px 2px;
+    cursor: pointer;
+    position: relative;
+    background: #eee;
+    font-size: 15px;
+    transition: 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    list-style-type: none;
+}
+
+ul li:hover {
+    background: #ddd;
+}
+
+ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 3px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+    
+  }
+
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    padding: 5px 10px 5px 10px;
+  }
+
+  .close:hover {
+    background-color: #fd493c;
+    color: white;
+  }
+
+
+
+
