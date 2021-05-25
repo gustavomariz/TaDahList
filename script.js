@@ -1,10 +1,41 @@
 // Load the storaged tasks
 
-onload = function(){
-ul = document.getElementById("tasklist");
-var oldTask = JSON.parse(localStorage.getItem("oldTasks"));
-console.log(oldTask)
- }
+document.addEventListener("DOMContentLoaded", () => {  
+  
+  var all_storage = JSON.parse(localStorage.getItem("storage_list")); 
+  
+  if(all_storage){    
+    all_storage.forEach(element => {
+
+      var full_list = []
+
+      let li = document.createElement("li");
+      let task = element;
+      var t = document.createTextNode(task);
+      li.appendChild(t);
+      full_list.push(task);
+      localStorage.setItem('storage_list', JSON.stringify(full_list));
+
+      document.getElementById("tasklist").appendChild(li);
+
+      let span = document.createElement("SPAN");
+      let txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+  
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+          let item = this.parentElement;
+          var index = full_list.indexOf(task);
+          full_list.splice(index,1);
+          item.style.display = "none";          
+          
+      }
+    }
+      
+    });      
+    }});
 
 // Create a "close" button and append it to each list item
 
@@ -39,13 +70,17 @@ list.addEventListener('click', function(ev) {
   }
 }, false);
 
-// Create a new list item when clicking on the "Add" button
+// Create a new list item when clicking on the "Add" button and update the storage
+
+var full_list = [];
 
 function addNewElement() {
     var li = document.createElement("li");
     var task = document.getElementById("newTask").value;
     var t = document.createTextNode(task);
     li.appendChild(t);
+    full_list.push(task);
+    localStorage.setItem('storage_list', JSON.stringify(full_list));
     
     if (task === '') {
       alert("There is no task to add!");
@@ -64,19 +99,21 @@ function addNewElement() {
     for (i = 0; i < close.length; i++) {
       close[i].onclick = function() {
         var item = this.parentElement;
+        var index = full_list.indexOf(task);
+        full_list.splice(index,1);
         item.style.display = "none";
       }
     }
   }
 
-// Storage all the tasks implemented
+// Update the storaged list every click.
 
-var tsks = document.getElementsByTagName("LI");
-var i;
+  document.addEventListener("click", () => {  
 
-for ( i = 0; i < tsks.length; i++) {
-    localStorage.setItem("oldTasks", JSON.stringify(tsks[i]));
-}
+  localStorage.removeItem('storage_list');
+  localStorage.setItem('storage_list', JSON.stringify(full_list));
+
+  })
 
 
 
